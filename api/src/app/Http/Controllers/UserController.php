@@ -56,7 +56,7 @@ class UserController extends Controller
     public function levelUP(Request $request)
     {
         // 指定IDのユーザーを取得（存在しない場合は404）
-        $user = User::findOrFail($request->user_id);
+        $user = User::findOrFail($request->user()->id);
 
         $user->increment('level'); // 自動で +1 & save してくれる
 

@@ -34,8 +34,10 @@ Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
 }
 
 ###
-POST http://localhost:8000/api/users/levelUP/2
+POST http://localhost:8000/api/users/levelUP
+Content-Type: application/json
 Accept: application/json
+Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
 
 ###
 POST http://localhost:8000/api/items/get

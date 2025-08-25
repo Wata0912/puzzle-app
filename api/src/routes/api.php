@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('users/index', [UserController::class, 'index']);
 Route::post('users/store', [UserController::class, 'store']);
 Route::post('users/update', [UserController::class, 'update'])->middleware('auth:sanctum');
-Route::post('users/levelUP/{user_id}', [UserController::class, 'levelUP'])->middleware('auth:sanctum');;
+Route::post('users/levelUP', [UserController::class, 'levelUP'])->middleware('auth:sanctum');;
 Route::get('users/show', [UserController::class, 'show'])->middleware('auth:sanctum');
 Route::get('users/items/{user_id}', [UserController::class, 'items']);
 Route::post('items/get', [ItemController::class, 'get']);
