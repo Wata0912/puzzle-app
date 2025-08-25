@@ -2,17 +2,17 @@
 GET http://localhost:8000/api/users/1
 Accept: application/json
 
-###
+###ユーザー一覧取得(ほぼ使わない)
 GET http://localhost:8000/api/users/index
 Accept: application/json
 
-###
+###ユーザー情報取得
 GET http://localhost:8000/api/users/show
 Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
 
-###
+###ユーザー作成
 POST http://localhost:8000/api/users/store
 Content-Type: application/json
 Accept: application/json
@@ -22,7 +22,7 @@ Accept: application/json
     "level": 1
 }
 
-###
+###ユーザー編集
 POST http://localhost:8000/api/users/update
 Content-Type: application/json
 Accept: application/json
@@ -33,7 +33,7 @@ Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
     "level": 10
 }
 
-###
+###ユーザーレベルアップ
 POST http://localhost:8000/api/users/levelUP
 Content-Type: application/json
 Accept: application/json
@@ -49,14 +49,14 @@ Accept: application/json
     "item_id": 1
 }
 
-###
+###アイテム取得(今後実装)
 GET http://localhost:8000/api/users/items/2
 Accept: application/json
 
-###
+###ステージ詳細取得
 GET  http://localhost:8000/api/stages/get/1
 Accept: application/json
 
-###
+###ステージ一覧取得
 GET  http://localhost:8000/api/stages/index
 Accept: application/json
