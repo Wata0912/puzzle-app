@@ -12,7 +12,7 @@ class UserController extends Controller
     //
     public function show(Request $request)
     {
-        $user = User::findOrFail($request->user_id);
+        $user = User::findOrFail($request->user()->id);
         return response()->json(UserResource::make($user));
     }
 

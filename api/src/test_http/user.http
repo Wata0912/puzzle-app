@@ -7,6 +7,12 @@ GET http://localhost:8000/api/users/index
 Accept: application/json
 
 ###
+GET http://localhost:8000/api/users/show
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
+
+###
 POST http://localhost:8000/api/users/store
 Content-Type: application/json
 Accept: application/json
@@ -20,11 +26,11 @@ Accept: application/json
 POST http://localhost:8000/api/users/update
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer 2|0UYOfFpgw1fKJOqqtRrTJPy1DxSPRsIB8QYTIw2na4f46fa9
+Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
 
 {
-    "name": "ccc",
-    "level": 444
+    "name": "ks",
+    "level": 10
 }
 
 ###
