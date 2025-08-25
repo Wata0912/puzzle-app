@@ -2,30 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\GetItemLogResourse;
+use App\Http\Resources\UserResource;
+use App\Models\GetItemLog;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
     //
-    public function create(Request $request)
+    public function get(Request $request)
     {
-        return view('items/create', ['error_id' => $request->error_id]);
+        $log = GetItemLog::create([
+            'user_id' => $request->user_id,
+            'item_id' => $request->item_id
+        ]);
+
+        return response()->json(new GetItemLogResourse($log));
     }
 
-    public function store(Request $request)
-    {
-        if (isset($request['name'])) {
-            $items = Item::where('name', '=', $request['name'])->first();
-            if ($items == null) {
-                Item::create(['name' => $request['name']]);
-                return redirect()->route('items.createResult');
-            }
-        }
-
-        return redirect('items/create/1');
-
-    }
 
     public function index()
     {

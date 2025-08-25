@@ -1,0 +1,15 @@
+show databases;
+use puzzle_db;
+show tables;
+select *
+from accounts;
+select *
+from items;
+select *
+from users;
+select *
+from user_details;
+select *
+from stages;
+select *
+from stage_cells

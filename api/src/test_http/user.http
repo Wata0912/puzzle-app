@@ -1,0 +1,54 @@
+###ユーザー情報取得
+GET http://localhost:8000/api/users/1
+Accept: application/json
+
+###
+GET http://localhost:8000/api/users/index
+Accept: application/json
+
+###
+POST http://localhost:8000/api/users/store
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "bbb",
+    "level": 1
+}
+
+###
+POST http://localhost:8000/api/users/update
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|0UYOfFpgw1fKJOqqtRrTJPy1DxSPRsIB8QYTIw2na4f46fa9
+
+{
+    "name": "ccc",
+    "level": 444
+}
+
+###
+POST http://localhost:8000/api/users/levelUP/2
+Accept: application/json
+
+###
+POST http://localhost:8000/api/items/get
+Content-Type: application/json
+Accept: application/json
+
+{
+    "user_id": 2,
+    "item_id": 1
+}
+
+###
+GET http://localhost:8000/api/users/items/2
+Accept: application/json
+
+###
+GET  http://localhost:8000/api/stages/get/1
+Accept: application/json
+
+###
+GET  http://localhost:8000/api/stages/index
+Accept: application/json

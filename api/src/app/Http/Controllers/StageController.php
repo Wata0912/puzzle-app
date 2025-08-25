@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\GetItemLogResourse;
 use App\Models\Stage;
 use App\Models\StageCell;
 use Illuminate\Http\Request;
@@ -11,11 +12,22 @@ class StageController extends Controller
     //
     public function index(Request $Request)
     {
-        $title = 'ステージ情報';
-        $stages = Stage::all();
-        return view('stages/index',
-            ['title' => $title, 'stages' => $stages]);
 
+        $stages = Stage::all();
+        return response()->json(new GetItemLogResourse($stages));
+
+    }
+
+    public function get(Request $request)
+    {
+
+
+        $stage = Stage::where('id', $request->stage_id)->get();
+        $cells = StageCell::where('stage_id', '=', $request->stage_id)->get();
+
+        //dd($stage);
+
+        return response()->json($cells);
     }
 
     public function createStage(Request $request)
