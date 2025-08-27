@@ -13,12 +13,27 @@ class ItemController extends Controller
     //
     public function get(Request $request)
     {
-        $log = GetItemLog::create([
-            'user_id' => $request->user()->id,
-            'item_id' => $request->item_id
-        ]);
+        // 1. クエリを実行して結果を取得
+        $existingItems = GetItemLog::where('user_id', $request->user()->id)->get();
 
-        return response()->json(new GetItemLogResourse($log));
+        // 2. 既に同じitem_idが存在するかチェック
+        $itemExists = $existingItems->where('item_id', $request->item_id)->first();
+
+        if (!$itemExists) {
+            // 3. 存在しない場合のみ新しいログを作成
+            $log = GetItemLog::create([
+                'user_id' => $request->user()->id,
+                'item_id' => $request->item_id
+            ]);
+
+            return response()->json(new GetItemLogResourse($log), 201);
+        }
+
+        // 4. 既に存在する場合の処理
+        return response()->json([
+            'message' => 'Item already exists in log',
+            'existing_item' => new GetItemLogResourse($itemExists)
+        ], 200);
     }
 
 

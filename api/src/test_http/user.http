@@ -43,15 +43,16 @@ Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
 POST http://localhost:8000/api/items/get
 Content-Type: application/json
 Accept: application/json
+Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
 
 {
-    "item_id": 3
+    "item_id": 6
 }
 
 ###獲得アイテム取得(今後実装)
 GET http://localhost:8000/api/users/items
 Accept: application/json
-Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
+Authorization: Bearer 3|JvyaQHEJCPLlhmmpn3WNNSf9icmwIk1XQAvILNh7574ff1a8
 
 ###ステージ詳細取得
 GET  http://localhost:8000/api/stages/get/1
