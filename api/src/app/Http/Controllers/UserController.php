@@ -18,7 +18,7 @@ class UserController extends Controller
 
     public function items(Request $request)
     {
-        $items = GetItemLog::where('user_id', $request->user_id)->get();
+        $items = GetItemLog::where('user_id', $request->user()->id)->get();
         return response()->json(UserResource::make($items));
     }
 

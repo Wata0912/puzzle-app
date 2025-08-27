@@ -12,21 +12,13 @@ class StageController extends Controller
     //
     public function index(Request $Request)
     {
-
         $stages = Stage::all();
         return response()->json(new GetItemLogResourse($stages));
-
     }
 
     public function get(Request $request)
     {
-
-
-        $stage = Stage::where('id', $request->stage_id)->get();
         $cells = StageCell::where('stage_id', '=', $request->stage_id)->get();
-
-        //dd($stage);
-
         return response()->json($cells);
     }
 
@@ -37,7 +29,6 @@ class StageController extends Controller
 
         return view('stages/createStage', ['options' => $options, 'title' => $title]);
     }
-
 
     public function createResult(Request $request)
     {
@@ -66,7 +57,6 @@ class StageController extends Controller
         $posY = [1.5, 0.5, -0.5, -1.5];
         $index = 0; // object_id の配列のインデックス
 
-
         foreach ($posX as $x) {
             foreach ($posY as $y) {
 
@@ -82,8 +72,6 @@ class StageController extends Controller
                 $index++; // 次の object_id へ
             }
         }
-
-
         return redirect()->route('stages.createResult');
 
     }

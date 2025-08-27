@@ -18,7 +18,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "name": "bbb",
+    "name": "AAA",
     "level": 1
 }
 
@@ -39,19 +39,19 @@ Content-Type: application/json
 Accept: application/json
 Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
 
-###
+###アイテム獲得(今後実装)
 POST http://localhost:8000/api/items/get
 Content-Type: application/json
 Accept: application/json
 
 {
-    "user_id": 2,
-    "item_id": 1
+    "item_id": 3
 }
 
-###アイテム取得(今後実装)
-GET http://localhost:8000/api/users/items/2
+###獲得アイテム取得(今後実装)
+GET http://localhost:8000/api/users/items
 Accept: application/json
+Authorization: Bearer 2|e2u4zNrV8JaHwhLlDxMYfIQ19aKLgU5ftdzWpcrU9fb036b8
 
 ###ステージ詳細取得
 GET  http://localhost:8000/api/stages/get/1

@@ -14,7 +14,7 @@ class ItemController extends Controller
     public function get(Request $request)
     {
         $log = GetItemLog::create([
-            'user_id' => $request->user_id,
+            'user_id' => $request->user()->id,
             'item_id' => $request->item_id
         ]);
 
